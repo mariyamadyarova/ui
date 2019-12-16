@@ -25,7 +25,7 @@ Maven and JDK should be installed
 
 Valid attributes should be updated in config.properties in resource folder
 
-
+If getting error - chromedrive is not executable - then run "chmod +x chromedriver" command in terminal at resource folder to give permission.
 
 ## 1. Go to root of folder and run below commands
 
