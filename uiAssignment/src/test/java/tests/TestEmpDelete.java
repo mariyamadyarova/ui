@@ -28,6 +28,7 @@ public class TestEmpDelete {
         Setup.browser.quit();
     }
 
+    @DisplayName("Test that deleting employee is successful")
     @Test
     public void testDeleteEmployee() {
         empUtil.clickButton(Buttons.create);

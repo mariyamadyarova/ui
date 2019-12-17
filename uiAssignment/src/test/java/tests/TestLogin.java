@@ -6,10 +6,7 @@ import commonUtils.Utils;
 import enums.Buttons;
 import enums.TextFields;
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import projectUtils.EmployeeUtils;
 
 import static interfaces.ILocators.*;
@@ -39,6 +36,14 @@ public class TestLogin {
         Setup.browser.quit();
     }
 
+    @DisplayName("Test login functionality")
+    @Test
+    public void testLogin() {
+        empUtil.doSuccessfullLogin();
+        assertTrue("User is not logged in", utils.element(CREATE_BUTTON).isDisplayed());
+    }
+
+    @DisplayName("Test that wrong credentials gives login error")
     @Test
     public void checkLoginError() {
         empUtil.setTextField(TextFields.username,"Luke")
@@ -47,12 +52,14 @@ public class TestLogin {
         assertTrue("Unsuccessful login is not displaying error",empUtil.isLoginErrorAppear());
     }
 
+    @DisplayName("Test that empty credentials gives login error")
     @Test
     public void testLoginWithEmptyCredentials() {
         empUtil.setTextField(TextFields.username,"Luke").clickButton(Buttons.login);
         assertTrue("User is not getting error info tip ", utils.element(INVALID_FIELD).isDisplayed());
     }
 
+    @DisplayName("Test logout functionality")
     @Test
     public void testLogout() {
         empUtil.doSuccessfullLogin();

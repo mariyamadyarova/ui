@@ -46,6 +46,7 @@ public class TestEmpEdit {
         Setup.browser.quit();
     }
 
+    @DisplayName("Test that editing employee's name is successful")
     @Test
     public void testEditEmployeeName() {
         String changedLastName = "LastName" + RandomStringUtils.randomAlphabetic(3);
@@ -54,6 +55,7 @@ public class TestEmpEdit {
         assertTrue("Employee is not edited", empUtil.isEmployeeExist(changedLastName));
     }
 
+    @DisplayName("Test that editing employee's email is successful")
     @Test
     public void testEditEmail() {
         String changedText = "changed@email.com";
@@ -63,6 +65,7 @@ public class TestEmpEdit {
         assertTrue("Employee is not edited", utils.element(EMAIL_FIELD).getAttribute("value").equals(changedText));
     }
 
+    @DisplayName("Test that employee can be edited by double clicking")
     @Test
     public void testEditOnDoubleClick() {
         empUtil.selectEmployeeByDoubleClick(empCreated);

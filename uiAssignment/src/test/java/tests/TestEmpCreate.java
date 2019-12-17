@@ -44,6 +44,7 @@ public class TestEmpCreate {
         Setup.browser.quit();
     }
 
+    @DisplayName("Test that creating employee is successful")
     @Order(1)
     @Test
     public void testCreateEmployee() {
@@ -53,6 +54,7 @@ public class TestEmpCreate {
     }
 
 
+    @DisplayName("Test that creating employee with invalid email is unsuccessful")
     @Order(2)
     @Test
     public void testInvalidEmail() {
@@ -61,6 +63,7 @@ public class TestEmpCreate {
         assertTrue("", utils.element(INVALID_FIELD).isDisplayed());
     }
 
+    @DisplayName("Test that creating employee with invalid start date is unsuccessful")
     @Order(3)
     @Test
     public void testInvalidStartDate() {
