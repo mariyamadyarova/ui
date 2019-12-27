@@ -1,9 +1,13 @@
 package commonUtils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,21 +21,27 @@ public class Setup {
     InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
 
     public Setup() {
-        String client = getProperty("browser");
-        String path = System.getProperty("user.dir");
+
         baseUrl = getProperty("baseUrl");
-        switch (client) {
+
+        switch (getProperty("browser")) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", path + "/src/test/resources/chromedriver");
+                WebDriverManager.chromedriver().setup();
                 browser = new ChromeDriver();
                 break;
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", path + "/src/test/resources/geckodriver");
-                DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-                capabilities.setCapability("marionette", true);
-                browser = new FirefoxDriver(capabilities);
+                WebDriverManager.firefoxdriver().setup();
+                browser = new FirefoxDriver();
                 break;
+
+                // It can be extended further to many more browsers
+
+            default:
+                if(System.getProperty("os.name").startsWith("win")) {
+                    WebDriverManager.iedriver().setup();
+                    browser = new InternetExplorerDriver();
+                }
         }
     }
 

@@ -4,17 +4,17 @@ import org.apache.log4j.Logger;
 
 public class Urls {
 
-    private static Urls URLS = null;
+    private static Urls url = null;
     private static final Logger LOGGER = Logger.getLogger(Urls.class);
 
     private Urls() {
     }
 
     public static Urls getInstance() {
-        if (URLS == null) {
-            URLS = new Urls();
+        if (url == null) {
+            url = new Urls();
         }
-        return URLS;
+        return url;
     }
 
     public void openUrl(String url) {

@@ -1,27 +1,34 @@
 package interfaces;
 
 public interface ILocators {
+    String VERTICALS = ".vertical";
+    String DESTIN_DROPDOWN = "#select-destination";
+    String COOKIE_WINDOW = ".cookiebar button";
+    String CALENDAR = ".travel-date";
+    String MONTH_DROPDOWN = ".has-future";
+    String DURATION = "#select-duration";
+    String SEARCH_BUTTON = ".box-submit";
 
-    String USERNAME_FIELD = "#login-form fieldset label:nth-child(3) input";
-    String PASSWORD_FIELD = "#login-form fieldset label:nth-child(4) input";
-    String LOGIN_BUTTON = "#login-form fieldset button";
-    String LOGIN_ERROR = "#login-form .error-message";
-    String INVALID_FIELD = ".ng-invalid";
+    String FLIGHT_INCLUDED = ".active.transport-arranged";
+    String AIRPORT_OPTION = "//section[@class='filter-option'][2]/ul/li";
+    String BOARD_OPTION = "//section[@class='filter-option'][5]/ul/li";
 
-    String LOGGED_USERNAME = "#greetings";
-    String LOGOUT_BUTTON = ".header-container .main-button";
-    String CREATE_BUTTON = "#bAdd";
-    String EDIT_BUTTON = "#bEdit";
-    String DELETE_BUTTON_HOME = "#bDelete";
+    String CHECK_PRICE_BUTTON = ".details .main a";
+    String BOOK_BUTTON = "#offer-receipt-bookbutton";
+    String BOOKING_PRICE = ".price.no-marker .price-number";
 
-    String FIRSTNAME_FIELD = "//fieldset/label[1]/input";
-    String LASTNAME_FIELD = "//fieldset/label[2]/input";
-    String STARTDATE_FIELD = "//fieldset/label[3]/input";
-    String EMAIL_FIELD = "//fieldset/label[4]/input";
-    String CANCEL_BUTTON = ".bCancel";
-    String ADD_BUTTON = ".formFooter .main-button:nth-child(2)";
-    String UPDATE_BUTTON = ".formFooter .main-button:nth-child(1)";
-    String BACK_BUTTON = ".bBack";
-    String DELETE_BUTTON_EDIT = ".formFooter .main-button:nth-child(3)";
-    String DELETE_BUTTON_EDIT_DISABLED = ".formFooter .main-button:nth-child(3).ng-hide";
- }
+    String BOOKER_EMAIL = ".passenger-01-contact-info [name$=email]";
+    String BOOKER_TEL = ".passenger-01-contact-info [name$=primary]";
+    String BOOKER_POSTCODE = ".passenger-01-contact-info [name$=postcode]";
+    String BOOKER_HOUSENO = ".passenger-01-contact-info [name$=number]";
+    String EMERGENCY_NAME = ".stay-emergency-contact-info [name$=name]";
+    String EMERGENCY_EMAIL = ".stay-emergency-contact-info [name$=email]";
+    String EMERGENCY_TEL = ".stay-emergency-contact-info [name$=tel]";
+
+    String NEXT_STEP_BUTTON = ".booking-footer .btn--theme--primary";
+
+    String VERIFY_CHECKBOX = ".options-list__input";
+    String VERIFY_BUTTON = ".btn--theme--primary.btn--large";
+    String PROCESSING_MODAL = "modal__dimmer";
+    String BOOKING_PRICE_PAY = "//td[@class='rowtotal']//span[@class='price-block__amount']/span[1]";
+}
