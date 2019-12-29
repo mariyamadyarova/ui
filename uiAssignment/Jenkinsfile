@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'mvn clean test site'
+                sh 'mvn clean test'
             }
             post {
                 always {
